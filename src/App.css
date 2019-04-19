@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -30,4 +31,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Header {
+  background: #519872;
+  font-weight: 600;
+  font-size: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
 }

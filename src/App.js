@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Components/header/Header';
-import Dashboard from './Components/dashboard/Dashboard';
-import Wizard from './Components/wizard/Wizard';
+import Header from './components/header/Header';
+
+import { HashRouter } from "react-router-dom"
+import routes from './routes'
 
 class App extends Component {
   constructor() {
@@ -14,12 +15,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header /> {/* pass props something like this user={user} updateUser={this.updateUser} */}
-        <Dashboard />{/* user={user} */}
-        <Wizard />{/* user={user} */}
-
-      </div>
+      <HashRouter>
+        <div className="App">
+          <Header /> {/* pass props something like this user={user} updateUser={this.updateUser} */}
+          {routes}
+        </div>
+      </HashRouter>
     );
   }
 }
