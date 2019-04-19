@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/header/Header';
+import Dashboard from './Components/dashboard/Dashboard';
+import Wizard from './Components/wizard/Wizard';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: {},
+    };
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header /> {/* pass props something like this user={user} updateUser={this.updateUser} */}
+        <Dashboard />{/* user={user} */}
+        <Wizard />{/* user={user} */}
+
       </div>
     );
   }
