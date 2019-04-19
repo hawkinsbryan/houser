@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import Dashboard from '../dashboard/Dashboard';
+import Dashboard from '../dashboard/Dashboard';
 import { Link } from 'react-router-dom'
+// import axios from "axios"
 
 
 export default class Wizard extends Component {
@@ -11,17 +12,32 @@ export default class Wizard extends Component {
             address: '',
             city: '',
             state: '',
-            zipcode: 0
+            zipcode: 0,
+            houses: []
         };
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    // handleSubmit(){
+    // handleSubmit(e) {
+    //     e.preventDefault();
 
+    //     axios.post("/api/house/", {
+    //         image: this.state.name,
+    //         brand: this.state.address,
+    //         pro: this.state.city,
+    //         model: this.state.state,
+    //         size: this.state.zipcode
+    //     }).then(response => {
+    //         console.log(response)
+    //         this.setState({ houses: houses.data })
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
     // }
 
     render() {
