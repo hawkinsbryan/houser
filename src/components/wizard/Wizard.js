@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dashboard from '../dashboard/Dashboard';
+// import Dashboard from '../dashboard/Dashboard';
 import { Link } from 'react-router-dom'
 // import axios from "axios"
 
@@ -15,8 +15,6 @@ export default class Wizard extends Component {
             zipcode: 0,
             houses: []
         };
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(e) {
@@ -27,11 +25,11 @@ export default class Wizard extends Component {
     //     e.preventDefault();
 
     //     axios.post("/api/house/", {
-    //         image: this.state.name,
-    //         brand: this.state.address,
-    //         pro: this.state.city,
-    //         model: this.state.state,
-    //         size: this.state.zipcode
+    //         name: this.state.name,
+    //         address: this.state.address,
+    //         city: this.state.city,
+    //         state: this.state.state,
+    //         zipcode: this.state.zipcode
     //     }).then(response => {
     //         console.log(response)
     //         this.setState({ houses: houses.data })
@@ -46,7 +44,6 @@ export default class Wizard extends Component {
                 <h1>Add New Listing</h1>
 
                 <Link to="/dashboard"><button>Cancel</button></Link>
-                <Dashboard />
                 <form>
                     <label> Property Name<input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></label> <br />
                     <label> Address <input type="text" name="address" value={this.state.address} onChange={this.handleChange} /></label>
@@ -55,7 +52,6 @@ export default class Wizard extends Component {
                     <label> State <input type="text" name="state" value={this.state.state} onChange={this.handleChange} /></label>
                     <label> Zip <input type="text" name="zipcode" value={this.state.zipcode} onChange={this.handleChange} /></label>
                     <div>
-
                         <button onClick={this.handleSubmit}>Complete</button>
                     </div>
                 </form>

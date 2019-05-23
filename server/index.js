@@ -4,9 +4,6 @@ const session = require('express-session');
 const massive = require('massive');
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env
 const controller = require('./controller');
-// const treasureController = require('./controllers/treasureController');
-// const authMiddleware = require('./middleware/authMiddleware');
-
 
 const app = express()
 
@@ -28,6 +25,7 @@ app.use(
 app.get('/api/houses', controller.getHouses);
 app.post('/api/house', controller.postHouse);
 app.delete('api/house/:id', controller.deleteHouse)
+// app.put('/api/houses/:id', controller.PUTREQUEST HERE)
 
 
 
