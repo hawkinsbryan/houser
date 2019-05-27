@@ -1,4 +1,4 @@
-import { createSTore } from 'redux'
+import { createStore } from 'redux'
 
 let initialState = {
     name: "",
@@ -6,6 +6,9 @@ let initialState = {
     city: "",
     state: "",
     zip: "",
+    img_url: "",
+    mortgage: 0,
+    rent: 0
 }
 
 export const UPDATE_NAME = "UPDATE_NAME"
@@ -13,10 +16,13 @@ export const UPDATE_ADDRESS = "UPDATE_ADDRESS"
 export const UPDATE_CITY = "UPDATE_CITY"
 export const UPDATE_STATE = "UPDATE_STATE"
 export const UPDATE_ZIP = "UPDATE_ZIP"
+export const UPDATE_IMG_URL = "UPDATE_IMG_URL";
+export const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
+export const UPDATE_RENT = "UPDATE_RENT";
 
 export const RESET_STATE = "RESET_STATE"
 
-funciton reducer(state = initialState, action) {
+function reducer(state = initialState, action) {
     const { type, payload } = action
     switch (type) {
         case UPDATE_NAME:
@@ -29,6 +35,12 @@ funciton reducer(state = initialState, action) {
             return { ...state, state: payload }
         case UPDATE_ZIP:
             return { ...state, zip: payload }
+        case UPDATE_IMG_URL:
+            return { ...state, img_url: payload }
+        case UPDATE_MORTGAGE:
+            return { ...state, mortgage: payload }
+        case UPDATE_RENT:
+            return { ...state, rent: payload }
         case RESET_STATE:
             return {
                 name: "",
@@ -36,9 +48,12 @@ funciton reducer(state = initialState, action) {
                 city: "",
                 state: "",
                 zip: "",
+                img_url: "",
+                mortgage: 0,
+                rent: 0
             }
         default: return state
     }
 }
 
-export default createSTore(reducer)
+export default createStore(reducer)

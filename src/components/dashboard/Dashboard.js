@@ -11,7 +11,7 @@ export default class Dashboard extends Component {
             houses: []
         };
     }
-    componentDidMount() {  // this is step 3 invoking the method as soon as Dashboard view loads
+    componentDidMount() {
         this.getHouses()
     }
 
@@ -39,6 +39,9 @@ export default class Dashboard extends Component {
                     city={house.city}
                     state={house.state}
                     zip={house.zip}
+                    img={house.img_url}
+                    mortgage={house.mortgage}
+                    rent={house.rent}
                     key={i}
                     deleteHouse={this.deleteHouse}
                 />
@@ -46,7 +49,7 @@ export default class Dashboard extends Component {
         });
         return (
             <div className="Dashboard">
-                <Link to="/wizard"><button>Add New Property</button></Link>
+                <Link to="wizard/wizard1"><button>Add New Property</button></Link>
                 <h1>Dashboard</h1>
                 <h2>Home Listings</h2>
                 {mappedHouses}
