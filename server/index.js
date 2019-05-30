@@ -25,7 +25,7 @@ app.use(
 app.get('/api/houses', controller.getHouses);
 app.post('/api/house', controller.postHouse);
 app.delete('api/house/:id', controller.deleteHouse)
-// app.put('/api/houses/:id', controller.PUTREQUEST HERE)
+app.put('/api/houses/:id', controller.updateHouse)
 
 
 

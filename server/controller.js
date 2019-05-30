@@ -15,6 +15,15 @@ module.exports = {
         db.delete_house(id)
             .then(() => res.sendStatus(200))
             .catch(error => console.log(error));
+    },
+    updateHouse: (req, res) => {
+        const db = req.app.get("db");
+        db.update_houses([
+            req.params.id,
+            req.query.img_url,
+            req.query.mortgage,
+            req.query.rent])
+            .then(() => res.sendStatus(200))
+            .catch(error => console.log(error));
     }
-}
 
